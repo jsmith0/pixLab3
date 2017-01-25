@@ -13,7 +13,7 @@ public class IntArrayWorkerTester
     System.out.println("This should have all 1's in first row and all 2's in second");
     worker.print();
   }
-  
+   
   /** Method to test fillPattern1 */
   public static void testFillPattern1()
   {
