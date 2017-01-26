@@ -1,5 +1,7 @@
 package com.company;
 
+import java.awt.*;
+
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -52,7 +54,45 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
+
+  public static void justBlue(){
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setGreen(0);
+        pixelObj.setRed(0);
+
+      }
+    }
+  }
+
+  public static void testNegate(){
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setGreen(255-);
+        pixelObj.setRed(255-);
+
+      }
+    }
+  }
+
+  public static void grayscale(){
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setColor((Color.red+Color.blue+Color.green)/3);
+      }
+    }
+}
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -61,6 +101,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     testZeroBlue();
+    Picture.justBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
